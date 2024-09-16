@@ -1,0 +1,95 @@
+<code class="m-0 mb-2">feature</code>
+<h1>Home</h1>
+<p class="subtitle mb-16">
+  Welcome to the "Angular Enterprise Architecture" example. The application
+  showcases many of the architectural approaches discussed in the ebook and can
+  serve as an example (or starting point) when implementing your own project.
+</p>
+
+<div class="grid md:grid-cols-2 gap-8">
+  <div>
+    <h2>Focus on architecture</h2>
+    <p>
+      The example focuses on architecture and its automated validation and comes
+      with an example for ech individual concept as well as all eslint rules out
+      of the box. Adding some forbidden import, for example, try to import
+      <code>ProductService</code> in the
+      <code>OrderDashboardComponent</code> and run <code>ng lint</code> to see
+      it in action.
+    </p>
+    <ul class="checklist">
+      <li>
+        <strong>Architecture example</strong> - the project showcases all
+        concepts that have been discussed in the ebook, namely
+        <code>core</code>, <code>ui</code>, <code>pattern</code>,
+        <code>feature</code> and <code>shared-feature</code> and how they can be
+        used together. The most of real life applications can almost always be
+        expressed as a unique combination of these concepts.
+      </li>
+      <li>
+        <strong>Automated Architecture validation</strong> - the architecture
+        validation is automated with the help of
+        <code>eslint-module-boundaries</code> plugin which can guarantee that
+        the architecture stays clean through out the project life time instead
+        of situation where folder structure looks clean but hides a convoluted
+        dep graph behind the scenes.
+      </li>
+      <li>
+        <strong>Modern Standalone APIs</strong> - the setup uses the latest
+        modern Standalone APIs and approaches, see example in
+        <code>core/core.ts</code> in form of <code>provideCore()</code> as an
+        inspiration how to implement your own functionality in a standalone
+        compatible way.
+      </li>
+      <li>
+        <strong>Extendable</strong> - the setup supports extending of the
+        project by creating additional apps and libs in this workspace. The
+        provided rules for architecture validation cover this scenario as well.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2>Decisions to be made</h2>
+    <p>
+      The example focuses on architecture and related concerns and is therefore
+      <strong>not opinionated</strong> about many topics that need to be handled
+      by most projects but are at the same time quite unique to every project
+      and organization.
+    </p>
+    <ul>
+      <li>
+        <strong>State management</strong> - depending on the amount of state,
+        the need to share state between multiple features and the complexity of
+        how state has to change based on user interaction, the app will land
+        somewhere on the spectrum from
+        <strong>component based state management</strong> to full blown
+        <strong
+          >state management library like <code>&#64;ngrx/store</code></strong
+        >
+      </li>
+      <li>
+        <strong>Component library</strong> - the example comes with
+        <code>&#64;angular/material</code> out of the box but there are many
+        other 3rd party component libraries like primeng, Taiga UI, or even
+        custom...
+      </li>
+      <li>
+        <strong>SSR/ SSG</strong> - is the app a public website that needs to be
+        indexed by the search engines? In that case, SSR or SSG can dramatically
+        improve SEO, Lighthouse score and performance.
+      </li>
+      <li>
+        <strong>I18n</strong> - build time (<code>$localize</code>), runtime
+        (3rd party libs like <code>ngx-translate</code>), or none
+      </li>
+      <li>
+        <strong>Authentication & Authorization</strong> - does app even need to
+        manage it?, SSO, OAuth, 3rd party...
+      </li>
+      <li>
+        <strong>Other</strong> - every project is unique with different set of
+        requirements and constrains...
+      </li>
+    </ul>
+  </div>
+</div>

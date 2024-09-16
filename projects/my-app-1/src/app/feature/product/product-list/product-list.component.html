@@ -1,0 +1,25 @@
+<code class="m-0 mb-2">feature</code>
+<h1>Products</h1>
+
+<div class="grid md:grid-cols-2 gap-8 mt-16">
+  <div class="flex flex-col gap-4">
+    <p class="subtitle">Hello from product list!</p>
+    @for (product of products(); track product.name) {
+      <my-org-card>
+        {{ product.name }}
+        <button
+          class="ml-auto"
+          [routerLink]="['item-editor', product.name]"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [color]="rla.isActive ? 'accent' : 'primary'"
+          mat-icon-button
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </my-org-card>
+    }
+    <router-outlet />
+  </div>
+  <my-org-document-manager ctx="product" />
+</div>

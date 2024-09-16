@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "projects/my-app-1",
       "sourceRoot": "projects/my-app-1/src",
-      "prefix": "app",
+      "prefix": "app-1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -16,17 +16,13 @@
             "outputPath": "dist/my-app-1",
             "index": "projects/my-app-1/src/index.html",
             "browser": "projects/my-app-1/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/my-app-1/tsconfig.app.json",
             "assets": [
               "projects/my-app-1/src/favicon.ico",
               "projects/my-app-1/src/assets"
             ],
-            "styles": [
-              "projects/my-app-1/src/styles.css"
-            ],
+            "styles": ["projects/my-app-1/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -74,18 +70,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/my-app-1/tsconfig.spec.json",
             "assets": [
               "projects/my-app-1/src/favicon.ico",
               "projects/my-app-1/src/assets"
             ],
-            "styles": [
-              "projects/my-app-1/src/styles.css"
-            ],
+            "styles": ["projects/my-app-1/src/styles.css"],
             "scripts": []
           }
         }
@@ -96,7 +87,7 @@
       "schematics": {},
       "root": "projects/my-app-2",
       "sourceRoot": "projects/my-app-2/src",
-      "prefix": "app",
+      "prefix": "app-2",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -104,17 +95,13 @@
             "outputPath": "dist/my-app-2",
             "index": "projects/my-app-2/src/index.html",
             "browser": "projects/my-app-2/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/my-app-2/tsconfig.app.json",
             "assets": [
               "projects/my-app-2/src/favicon.ico",
               "projects/my-app-2/src/assets"
             ],
-            "styles": [
-              "projects/my-app-2/src/styles.css"
-            ],
+            "styles": ["projects/my-app-2/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -162,18 +149,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/my-app-2/tsconfig.spec.json",
             "assets": [
               "projects/my-app-2/src/favicon.ico",
               "projects/my-app-2/src/assets"
             ],
-            "styles": [
-              "projects/my-app-2/src/styles.css"
-            ],
+            "styles": ["projects/my-app-2/src/styles.css"],
             "scripts": []
           }
         }
@@ -183,7 +165,7 @@
       "projectType": "library",
       "root": "projects/my-lib-1",
       "sourceRoot": "projects/my-lib-1/src",
-      "prefix": "lib",
+      "prefix": "lib-1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -204,10 +186,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/my-lib-1/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

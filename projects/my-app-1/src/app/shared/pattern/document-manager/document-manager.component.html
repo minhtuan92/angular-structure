@@ -1,0 +1,22 @@
+<div class="flex flex-col gap-4 p-4 border-2 rounded">
+  <code class="m-0 self-start">pattern</code>
+  <h2>Document Manager</h2>
+  <p>
+    Document manager is an example of a pattern (a drop in feature, or non
+    routed feature). Is usually a combination of components and services bound
+    to some specific data source, and can be used by "dropping in" its root
+    component eg <code>&lt;my-org-document-manager /></code> in the template of
+    some feature. It can also receive some context from parent to parametrize
+    the implemented behavior.
+  </p>
+  <p>
+    This is in contrast to components, pipes and directives in shared which are
+    generic, not bound to any data source, and should only communicate through
+    inputs and outputs.
+  </p>
+  @for (document of documents(); track document.name) {
+    <my-org-card>
+      {{ document.name }}
+    </my-org-card>
+  }
+</div>

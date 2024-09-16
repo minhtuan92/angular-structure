@@ -1,1 +1,102 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// TODO rework to mat3 theme
+$ax-blue-palette: (
+  // should be same as in tailwind.config.js
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #3b82f6,
+  600: #4c73db,
+  700: #2852c8,
+  800: #2144a6,
+  900: #1d3c91,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  )
+);
+
+$example-app-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$red-palette,
+    ),
+  )
+);
+
+html {
+  @include mat.all-component-themes($example-app-theme);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  @apply h-full;
+}
+
+body {
+  @apply m-0 font-sans;
+}
+
+h1 {
+  @apply text-5xl font-black mb-8;
+}
+
+h2 {
+  @apply text-3xl font-black mb-4;
+}
+
+p {
+  @apply text-lg leading-relaxed mb-4;
+
+  &.subtitle {
+    @apply text-2xl leading-relaxed text-slate-600;
+  }
+}
+
+ul {
+  @apply list-disc text-lg ml-4 mb-4;
+
+  li {
+    @apply py-2;
+  }
+
+  &.checklist {
+    @apply list-none;
+
+    li {
+      @apply relative pl-8;
+
+      &::before {
+        @apply absolute left-0 top-2;
+        content: '✅';
+      }
+    }
+  }
+}
+
+code {
+  @apply inline-block mx-2 px-2 bg-blue-200 rounded;
+}

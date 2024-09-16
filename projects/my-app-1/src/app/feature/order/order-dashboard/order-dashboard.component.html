@@ -1,0 +1,26 @@
+<code class="m-0 mb-2">feature</code>
+<h1>Order Dashboard</h1>
+<div class="grid md:grid-cols-2 gap-8 mt-16">
+  <div>
+    <p class="subtitle">Hello from order dashboard!</p>
+    <my-org-card class="mb-8">
+      <div class="w-full flex flex-col items-center gap-8">
+        <h2>Orders per quarter breakdown</h2>
+        <p>Some content...</p>
+        <button
+          class="w-max"
+          [routerLink]="['item-editor', 'orders-per-quarter']"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [color]="rla.isActive ? 'accent' : 'primary'"
+          mat-flat-button
+        >
+          Edit
+        </button>
+      </div>
+    </my-org-card>
+
+    <router-outlet />
+  </div>
+  <my-org-document-manager />
+</div>

@@ -1,0 +1,9 @@
+<div class="rounded shadow-md bg-white p-4 flex items-center">
+  <code>ui</code>
+  <ng-content></ng-content>
+  @if (isCloseable()) {
+    <button class="ml-auto" mat-icon-button (click)="closed.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</div>

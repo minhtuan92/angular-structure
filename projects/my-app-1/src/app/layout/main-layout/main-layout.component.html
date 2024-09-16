@@ -1,0 +1,59 @@
+<mat-toolbar class="fixed shadow-lg !bg-white">
+  <div class="container mx-auto px-10">
+    <header class="flex justify-between">
+      <a
+        href="https://angularexperts.io"
+        target="_blank"
+        class="hidden md:inline"
+      >
+        <img
+          height="60"
+          width="168"
+          src="https://angularexperts.io/assets/images/logo/angular-experts.svg"
+          alt="Angular Experts Logo"
+        />
+      </a>
+      <a href="https://angularexperts.io" target="_blank" class="md:hidden">
+        <img
+          height="48"
+          width="48"
+          src="https://angularexperts.io/assets/images/logo/angular-experts-icon.svg"
+          alt="Angular Experts Logo"
+        />
+      </a>
+
+      <nav class="flex items-center gap-4">
+        @for (route of ['home', 'order', 'product']; track $index) {
+          <a
+            [routerLink]="['/', route]"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [color]="rla.isActive ? 'accent' : 'primary'"
+            mat-flat-button
+            >{{ route | titlecase }}</a
+          >
+        }
+      </nav>
+    </header>
+  </div>
+</mat-toolbar>
+
+<main class="container mx-auto mt-16 p-10">
+  <router-outlet />
+</main>
+
+<footer class="mt-auto p-10 bg-white">
+  <div class="container mx-auto text-center">
+    Made with ❤️ by
+    <a class="text-blue-700 hover:font-bold" href="https://x.com/tomastrajan"
+      >Tomas Trajan</a
+    >
+    from
+    <a
+      class="text-blue-700 hover:font-bold"
+      href="https://angularexperts.io"
+      target="_blank"
+      >Angular Experts</a
+    >
+  </div>
+</footer>
