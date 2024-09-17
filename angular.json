@@ -2,6 +2,11 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "my-app-1": {
       "projectType": "application",
@@ -22,7 +27,7 @@
               "projects/my-app-1/src/favicon.ico",
               "projects/my-app-1/src/assets"
             ],
-            "styles": ["projects/my-app-1/src/styles.css"],
+            "styles": ["projects/my-app-1/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -76,7 +81,7 @@
               "projects/my-app-1/src/favicon.ico",
               "projects/my-app-1/src/assets"
             ],
-            "styles": ["projects/my-app-1/src/styles.css"],
+            "styles": ["projects/my-app-1/src/styles.scss"],
             "scripts": []
           }
         }
@@ -101,7 +106,7 @@
               "projects/my-app-2/src/favicon.ico",
               "projects/my-app-2/src/assets"
             ],
-            "styles": ["projects/my-app-2/src/styles.css"],
+            "styles": ["projects/my-app-2/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -155,7 +160,7 @@
               "projects/my-app-2/src/favicon.ico",
               "projects/my-app-2/src/assets"
             ],
-            "styles": ["projects/my-app-2/src/styles.css"],
+            "styles": ["projects/my-app-2/src/styles.scss"],
             "scripts": []
           }
         }

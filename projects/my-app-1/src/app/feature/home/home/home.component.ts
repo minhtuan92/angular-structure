@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-
-import { AuthService } from '../../../core/auth/auth.service';
+import { AuthService } from '../../../core/service/auth/auth.service';
 
 @Component({
   selector: 'my-org-home',
