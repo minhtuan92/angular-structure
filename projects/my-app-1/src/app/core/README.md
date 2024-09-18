@@ -1,4 +1,4 @@
-# Core (eager)
+# Core - [eager]
 
 The first type we’re going to discuss is the **core** which will live in the `core/` folder of our application.
 
