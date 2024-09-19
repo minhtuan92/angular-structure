@@ -18,3 +18,26 @@ Another great name which includes information about the way most of the patterns
 component which belongs to a lazy loaded feature.
 
 From this perspective, pattern can be also described as **a "non-routed" feature**.
+
+## Pattern vs ui, core and feature
+
+Now that we have some idea what patterns are, let’s drive the point home by highlighting the most important differences between the `pattern` and the concepts which we discussed until now, namely the `ui` , `core` and `feature`.
+
+- `pattern` vs `ui` - Pattern is usually bound to a specific data source in form of service or a selector from state management library, which is forbidden for the reusable UI components which can only consume data through inputs and outputs. Besides that, pattern is usually a combination of multiple standalones (pattern specific and also other reusable ui standalones) and injectables
+
+- `pattern` vs `core` - Pattern usually has its own UI which is created as a combination of pattern specific and other reusable `ui` standalones, while core is only about headless logic and therefore doesn’t have any UI
+
+- pattern vs feature - Pattern is usually similar to a feature in that it’s a combination of multiple standalones and injectables, but **the main difference is that pattern is consumed through its "drop in" component** (e.g. <my-org-document-manager [context]="context" ...> ) **instead of a route config** which is the case for the lazy features
+
+## When to create a pattern
+
+- **Quite different behavior and UI** - In this case, it would make sense to keep the implementation fully isolated to preserve ability to evolve it independently in the future. The cost of that will be a slight duplication, in our case, the order feature will implement its own (and much simpler) version of the document service and related components.
+
+- **Similar behavior but different UI** - In this case, it would make sense to extract the common behavior into the core/ for example core/document/ folder and implement the UI separately in each feature. The cost of that will be a slight duplication, in our case, the order feature will implement its own (and much simpler) version of the related
+  components.
+
+- **Different behavior and similar UI** - In this case, it would make sense to extract the common UI into the ui/ for example ui/document/ folder and implement the behavior separately in each feature in form of a document service or event a state management solution for the more complex one. The cost of that will be a slight duplication, in our case, the order feature will implement its own (and much simpler) version of the document service.
+
+- **Similar behavior and similar UI** - In this case, it would make sense to extract the common behavior and UI into the pattern/ for example pattern/document-manager/ folder and implement the integration in each feature in form of a "drop in" component. This will eectively eliminate any duplication but will couple the pattern implementation to different requirements of the features which use it which will lead to need to parameterize the pattern and therefore make it more complex.
+
+> There are many more examples of patterns which can be implemented, but the key takeaway is that patterns are great for implementing of cross-cutting business features which could be dropped in multiple lazy features or lazy sub features with no or minimal configuration.
