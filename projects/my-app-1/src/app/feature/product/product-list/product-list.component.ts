@@ -8,7 +8,7 @@ import { CardComponent } from '../../../shared/ui/card/card.component';
 import { DocumentManagerComponent } from '../../../shared/pattern/document-manager/document-manager.component';
 
 @Component({
-  selector: 'my-org-product-list',
+  selector: 'my-app-1-product-list',
   standalone: true,
   imports: [
     RouterLink,

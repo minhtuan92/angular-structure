@@ -27,11 +27,11 @@
                 "allow": [
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
-                  ["core", { "app": "${from.app}" }]
+                  ["core", { "app": "${from.app}" }],
                 ]
               },
               {
-                "from": "ui",
+                "from": "shared/ui",
                 "allow": [
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
@@ -44,8 +44,8 @@
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
-                  ["ui", { "app": "${from.app}" }],
-                  ["pattern", { "app": "${from.app}" }]
+                  ["shared/ui", { "app": "${from.app}" }],
+                  ["shared/pattern", { "app": "${from.app}" }]
                 ]
               },
               {
@@ -60,13 +60,13 @@
                 ]
               },
               {
-                "from": ["pattern"],
+                "from": ["shared/pattern"],
                 "allow": [
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
-                  ["ui", { "app": "${from.app}" }],
-                  ["pattern", { "app": "${from.app}" }]
+                  ["shared/ui", { "app": "${from.app}" }],
+                  ["shared/pattern", { "app": "${from.app}" }]
                 ]
               },
               {
@@ -75,8 +75,8 @@
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
-                  ["ui", { "app": "${from.app}" }],
-                  ["pattern", { "app": "${from.app}" }]
+                  ["shared/ui", { "app": "${from.app}" }],
+                  ["shared/pattern", { "app": "${from.app}" }]
                 ]
               },
               {
@@ -85,7 +85,7 @@
                   ["lib-api"],
                   ["env", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
-                  ["pattern", { "app": "${from.app}" }],
+                  ["shared/pattern", { "app": "${from.app}" }],
                   [
                     "feature",
                     { "app": "${from.app}", "feature": "${from.feature}" }
@@ -105,22 +105,6 @@
                 "allow": [["lib", { "app": "${from.lib}" }]]
               }
             ]
-          }
-        ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "my-org",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "my-org",
-            "style": "kebab-case"
           }
         ]
       },
@@ -160,20 +144,8 @@
             "baseCapture": ["app"]
           },
           {
-            "type": "ui",
-            "pattern": "ui",
-            "basePattern": "projects/**/src/app",
-            "baseCapture": ["app"]
-          },
-          {
             "type": "layout",
             "pattern": "layout",
-            "basePattern": "projects/**/src/app",
-            "baseCapture": ["app"]
-          },
-          {
-            "type": "pattern",
-            "pattern": "pattern",
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
           },
@@ -192,7 +164,24 @@
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
           },
-
+          {
+            "type": "shared/pattern",
+            "pattern": "shared/pattern",
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
+          {
+            "type": "shared/ui",
+            "pattern": "shared/ui",
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
+          {
+            "type": "shared",
+            "pattern": "shared/(directive|model|pipe|util)",
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
           {
             "type": "lib-api",
             "mode": "file",

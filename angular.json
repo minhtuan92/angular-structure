@@ -4,7 +4,15 @@
   "newProjectRoot": "projects",
   "schematics": {
     "@schematics/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "standalone": true,
+      "changeDetection": "OnPush"
+    },
+    "@schematics/angular:directive": {
+      "standalone": true
+    },
+    "@schematics/angular:pipe": {
+      "standalone": true
     }
   },
   "projects": {
@@ -13,7 +21,7 @@
       "schematics": {},
       "root": "projects/my-app-1",
       "sourceRoot": "projects/my-app-1/src",
-      "prefix": "app-1",
+      "prefix": "my-app-1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -84,6 +92,15 @@
             "styles": ["projects/my-app-1/src/styles.scss"],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-app-1/**/*.ts",
+              "projects/my-app-1/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -92,7 +109,7 @@
       "schematics": {},
       "root": "projects/my-app-2",
       "sourceRoot": "projects/my-app-2/src",
-      "prefix": "app-2",
+      "prefix": "my-app-2",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -163,6 +180,15 @@
             "styles": ["projects/my-app-2/src/styles.scss"],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-app-2/**/*.ts",
+              "projects/my-app-2/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -170,7 +196,7 @@
       "projectType": "library",
       "root": "projects/my-lib-1",
       "sourceRoot": "projects/my-lib-1/src",
-      "prefix": "lib-1",
+      "prefix": "my-lib-1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -192,6 +218,15 @@
           "options": {
             "tsConfig": "projects/my-lib-1/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-lib-1/**/*.ts",
+              "projects/my-lib-1/**/*.html"
+            ]
           }
         }
       }

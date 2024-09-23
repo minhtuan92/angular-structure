@@ -6,7 +6,7 @@ import { DocumentManagerComponent } from '../../../shared/pattern/document-manag
 import { CardComponent } from '../../../shared/ui/card/card.component';
 
 @Component({
-  selector: 'my-org-order-dashboard',
+  selector: 'my-app-1-order-dashboard',
   standalone: true,
   imports: [
     RouterLink,

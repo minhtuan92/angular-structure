@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'my-org-card',
+  selector: 'my-app-1-card',
   standalone: true,
   imports: [MatButtonModule, MatIconModule],
   templateUrl: './card.component.html',

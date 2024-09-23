@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from '../../../shared/ui/card/card.component';
 
 @Component({
-  selector: 'my-org-item-editor',
+  selector: 'my-app-1-item-editor',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, RouterLink, CardComponent],
   templateUrl: './item-editor.component.html',

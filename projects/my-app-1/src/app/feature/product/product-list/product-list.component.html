@@ -5,7 +5,7 @@
   <div class="flex flex-col gap-4">
     <p class="subtitle">Hello from product list!</p>
     @for (product of products(); track product.name) {
-      <my-org-card>
+      <my-app-1-card>
         {{ product.name }}
         <button
           class="ml-auto"
@@ -17,9 +17,9 @@
         >
           <mat-icon>edit</mat-icon>
         </button>
-      </my-org-card>
+      </my-app-1-card>
     }
     <router-outlet />
   </div>
-  <my-org-document-manager ctx="product" />
+  <my-app-1-document-manager ctx="product" />
 </div>

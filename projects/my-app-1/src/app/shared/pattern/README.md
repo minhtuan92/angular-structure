@@ -1,5 +1,7 @@
 # Pattern - [lazy] - [eager (rare)]
 
+**Type: shared/pattern**
+
 In a nutshell, the pattern is a type which consists of a pre-packaged combination of standalones and injectables which implement a specific reusable use case which is consumed in a lazy feature (or rarely in layout) with a help of "drop in" component instead of a route!
 
 Patterns are usually consumed through their main "drop in" component which is used in the templates of lazy features…

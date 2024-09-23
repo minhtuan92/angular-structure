@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:app1": "ng serve --project my-app-1",
-    "build:app1": "ng build --project my-app-1"
+    "build:app1": "ng build --project my-app-1",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -28,14 +29,19 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.1.0",
+    "@angular-eslint/builder": "18.3.1",
+    "@angular-eslint/eslint-plugin": "18.3.1",
+    "@angular-eslint/eslint-plugin-template": "18.3.1",
+    "@angular-eslint/schematics": "18.3.1",
+    "@angular-eslint/template-parser": "18.3.1",
     "@angular/cli": "^18.1.0",
     "@angular/compiler-cli": "^18.1.0",
     "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
     "autoprefixer": "^10.4.16",
     "esbuild-visualizer": "^0.6.0",
-    "eslint": "^8.57.0",
+    "eslint": "8.57.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-boundaries": "^4.2.2",
     "http-server": "^14.1.1",

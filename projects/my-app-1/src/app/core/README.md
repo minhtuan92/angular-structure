@@ -1,5 +1,7 @@
 # Core - [eager]
 
+**Type: core**
+
 The first type we’re going to discuss is the **core** which will live in the `core/` folder of our application.
 
 - Implementation in `core/` folder

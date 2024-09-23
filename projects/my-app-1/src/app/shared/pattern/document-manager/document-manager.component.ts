@@ -12,7 +12,7 @@ import { DocumentManagerService } from './document-manager.service';
 import { DocumentManagerCtx } from './document-manager.types';
 
 @Component({
-  selector: 'my-org-document-manager',
+  selector: 'my-app-1-document-manager',
   standalone: true,
   imports: [CardComponent],
   templateUrl: './document-manager.component.html',

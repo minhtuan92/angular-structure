@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-1-main-layout',
+  selector: 'my-app-1-main-layout',
   standalone: true,
   imports: [
     RouterLink,

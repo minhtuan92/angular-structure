@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 @Component({
-  selector: 'app-1-root',
+  selector: 'my-app-1-root',
   standalone: true,
   imports: [MainLayoutComponent],
   templateUrl: './app.component.html',
