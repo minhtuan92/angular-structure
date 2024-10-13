@@ -1,3 +1,0 @@
-# Util
-
-**Type: shared**

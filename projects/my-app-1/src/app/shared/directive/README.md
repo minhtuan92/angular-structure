@@ -1,3 +1,0 @@
-# Directive
-
-**Type: shared**

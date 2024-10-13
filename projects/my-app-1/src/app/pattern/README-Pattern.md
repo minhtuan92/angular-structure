@@ -1,12 +1,12 @@
 # Pattern - [lazy] - [eager (rare)]
 
-**Type: shared/pattern**
+**Type: pattern**
 
 In a nutshell, the pattern is a type which consists of a pre-packaged combination of standalones and injectables which implement a specific reusable use case which is consumed in a lazy feature (or rarely in layout) with a help of "drop in" component instead of a route!
 
 Patterns are usually consumed through their main "drop in" component which is used in the templates of lazy features…
 
-- Implementation in `shared/pattern/<pattern-name>/` folder
+- Implementation in `pattern/<pattern-name>/` folder
 - Great for implementing of **cross-cutting business features** like document manager, approval process, change history (audit log), notes or comments which could be dropped in many lazy features
 - One way dependency between patterns and features, **only features can consume patterns but not the other way around**
 - Consumed through main **"drop in" component used in the templates of lazy features** (or rarely, layouts)

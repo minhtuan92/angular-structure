@@ -11,12 +11,15 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
+      "my-app-1": [
+        "./dist/my-app-1"
+      ],
+      "my-app-2": [
+        "./dist/my-app-2"
+      ],
       "my-lib-1": [
         "./dist/my-lib-1"
       ],
-      "my-lib-2": [
-        "./dist/my-lib-2"
-      ]
     },
     "esModuleInterop": true,
     "sourceMap": true,

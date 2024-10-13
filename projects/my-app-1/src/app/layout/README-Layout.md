@@ -6,7 +6,7 @@ Typically, most applications will use one or more layouts as a “frame” aroun
 
 - Implementation in `layout/` folder
 - Eager, available from start, part of the initial bundles size
-- Only template context based (standalones) building blocks like components, directives and pipes
+- **Only template context based (standalones) building blocks like: `components`, `directives` and `pipes`**
 - Can and most likely will consume services and state from `core/`
   - Auth state to filter which menu items should be displayed
   - User state to display user avatar
@@ -22,7 +22,7 @@ This case describes an application which can use a single main layout for all it
 
 Such layout will then be used directly in the template of the `AppComponent` and such layout will contain at list one `<router-outlet />` as a part of its own template as a target slot to display lazy loaded features.
 
-```javascript
+```typescript
 1 @Component({
 2     standalone: true,
 3     selector: 'my-org-app',
@@ -35,17 +35,17 @@ Such layout will then be used directly in the template of the `AppComponent` and
 
 Another common scenario is when an application has a relatively low amount of layouts, e.g. one for authentication purposes and then another once to display every other lazy feature once a user has logged in.
 
-This is best solved as a part of the application routes config in the `app.routes.ts` and the `AppComponent` will contain just a lone `<routeroutlet />` in its template.
+This is best solved as a part of the application routes config in the `app.routes.ts` and the `AppComponent` will contain just a lone `<router-outlet />` in its template.
 
 The gist of the solution is to have two main configs with two main contexts, e.g. '' and '/app' which will use respective layout as its component and then define lazy loaded features as their children.
 
 The layouts themselves will then be implemented in the `layout/` folder
 
-```javascript
+```typescript
 1 export const routes: Routes = [
 2   {
 3      path: '',
-4      component: AuthLayoutComponent, //<== login, signup, Ä layout
+4      component: AuthLayoutComponent, //<-- login, signup, ... layout
 5      children: [
 6          {
 7              path: 'login',
@@ -57,7 +57,7 @@ The layouts themselves will then be implemented in the `layout/` folder
 13
 14  {
 15      path: 'app',
-16      component: MainLayoutComponent, // <== main layout
+16      component: MainLayoutComponent, // <-- main layout
 17      children: [
 18         {
 19         path: 'orders',
@@ -80,11 +80,11 @@ In such case, the app level routes config will be very simple and will only defi
 
 Each feature will then define its own layout as a part of its own routes’ config.
 
-```javascript
+```typescript
 1 export const routes: Routes = [
 2   {
 3       path: '',
-4       component: DashboardLayoutComponent, ë <¶ custom (per feature) layout
+4       component: DashboardLayoutComponent, // <-- custom (per feature) layout
 5       children: [
 6           {
 7               path: '',

@@ -6,7 +6,7 @@ import {
   input,
 } from '@angular/core';
 
-import { CardComponent } from '../../ui/card/card.component';
+import { CardComponent } from '../../../ui/components/card/card.component';
 
 import { DocumentManagerService } from './document-manager.service';
 import { DocumentManagerCtx } from './document-manager.types';

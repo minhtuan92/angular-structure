@@ -22,14 +22,14 @@
           alt="Angular Experts Logo"
         />
       </a>
-      <p class='flex justify-center items-center text-xl'>Main Layout</p>
+      <p class='flex justify-center items-center text-xl'>Second Layout</p>
       <nav class="flex items-center gap-4">
         @for (route of ['home', 'order', 'product']; track $index) {
           <a
             [routerLink]="['/', route]"
             routerLinkActive
             #rla="routerLinkActive"
-            [color]="rla.isActive ? 'accent' : 'primary'"
+            [color]="rla.isActive ? 'primary' : 'accent'"
             mat-flat-button
             >{{ route | titlecase }}</a
           >
