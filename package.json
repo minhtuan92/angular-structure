@@ -9,6 +9,7 @@
     "test": "ng test",
     "start:app1": "ng serve --project my-app-1",
     "build:app1": "ng build --project my-app-1",
+    "lint:app1": "ng lint --project my-app-1",
     "lint": "ng lint"
   },
   "private": true,

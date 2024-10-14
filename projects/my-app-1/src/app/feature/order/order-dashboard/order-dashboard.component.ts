@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 
-import { DocumentManagerComponent } from '../../../shared/pattern/document-manager/document-manager.component';
-import { CardComponent } from '../../../shared/ui/card/card.component';
+import { DocumentManagerComponent } from '../../../pattern/components/document-manager/document-manager.component';
+import { CardComponent } from '../../../ui/components/card/card.component';
 
 @Component({
   selector: 'my-app-1-order-dashboard',

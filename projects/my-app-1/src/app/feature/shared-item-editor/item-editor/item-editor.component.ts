@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CardComponent } from '../../../shared/ui/card/card.component';
+import { CardComponent } from '../../../ui/components/card/card.component';
 
 @Component({
   selector: 'my-app-1-item-editor',

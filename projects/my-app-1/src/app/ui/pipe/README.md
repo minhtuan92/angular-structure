@@ -1,3 +1,0 @@
-# Pipe
-
-**Type: shared**

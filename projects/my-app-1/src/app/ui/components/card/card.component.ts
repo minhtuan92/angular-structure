@@ -18,6 +18,5 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class CardComponent {
   isCloseable = input(false);
-
   @Output() closed = new EventEmitter<void>();
 }

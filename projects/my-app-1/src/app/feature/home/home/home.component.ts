@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthService } from '../../../core/services/auth/auth.service';
-import { MyPipePipe } from '../../../shared/pipe/my-pipe/my-pipe.pipe';
 import { myUtil } from '../../../core/utils/my-util/my-util';
+import { MyPipe } from '../../../ui/pipes/my-pipe/my-pipe.pipe';
 
 @Component({
   selector: 'my-app-1-home',
   standalone: true,
-  imports: [MyPipePipe],
+  imports: [MyPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

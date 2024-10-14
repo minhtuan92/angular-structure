@@ -12,6 +12,14 @@ Patterns are usually consumed through their main "drop in" component which is us
 - Consumed through main **"drop in" component used in the templates of lazy features** (or rarely, layouts)
 - Sharing logic between patterns follows familiar “extract one level up rule” (into core or ui)
 
+```bash
+|-- app
+    |-- pattern
+        |-- components
+        |-- directives
+        |-- pipes
+```
+
 ## Why do we call it pattern or a "drop in" feature
 
 The idea for the name came from the development process of a generic organization specific UI library (think in direction of MyOrgMaterial) where we wanted to differentiate between the level of **individual generic reusable UI components (e.g. button or popover)** and the level of **pre-packaged combination of such components, e.g. context menu** (a multiple buttons in a popover) which we called patterns…

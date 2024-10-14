@@ -8,7 +8,7 @@ The first type we’re going to discuss is the **core** which will live in the `
 - Eager, available from start, part of the initial bundles size
 - Only **injector based (headless) building blocks** like services, interceptors, guards, functions…
 - Application configuration and setup in the `provideCore()`
-- Content can (and should) be sub-structured based by domains (or features), e.g. `core/service/user/`, `core/guard/auth/`
+- Content can (and should) be sub-structured based by domains (or features), e.g. `core/services/user/`, `core/guards/auth/`
 - Core **logic is globally accessible** and can be accessed by any **_`layout`_**, **_`feature`_** and **_`pattern`_**
 - Core is the place to extract logic, if it needs to be used more than one `layout`,`feature` and`pattern`
 
@@ -62,3 +62,40 @@ provideCore() itself. That way, there is no ambiguity or possibility to miss som
 24   ];
 25 }
 ```
+
+## Angular (and state management) specific providers and setup
+
+The `provideCore()` is the right place to set up all global Angular providers like `provideAnimations()` , `provideRouter()` , `provideHttpClient()` (with interceptors) or providers from state management libraries like NgRx `provideStore()` .
+
+All these “provideX” APIs usually support passing of additional configuration to further parametrize or enhance provided functionality
+
+## Infrastructure specific providers
+
+Besides providers from Angular and the state management library of choice, `provideCore()` is also a place to register providers from 3rd party libraries which often handle “infrastructure” use cases like logging, translations, analytics and other…
+
+## Initialization logic and kick-starting of processes
+
+The `provideCore()` is also the place where we’re going to kickstart all initial and long-running processes that need to take place at the application startup.
+
+This will be performed with the help of the special `ENVIRONMENT_INITIALIZER` provider which allows us to run any logic inside its `useValue()` function. For example, when using NgRx, this could be a place to dispatch an AppInit event which can then kickstart other processing in the NgRx effects like resolving of the authentication token or loading of the user.
+
+We should always make sure that this logic is implemented as last within the `provideCore()` otherwise we might get an error because we might be injecting some providers which weren’t provided yet.
+
+## App-specific core logic needed from start
+
+This represents app-specic business logic in the form of services, guards, state management specific logic and more.
+
+This logic is then something that we need from the start. A great example to illustrate this point is logic to manage authentication state such as authentication token and the user entity. This state needs to be available
+from the start because it could be used to:
+
+- **Perform other backend requests** - auth token will be used by interceptors to set it as HTTP header to authenticate performed backend requests
+- **Determine if a user has access to a specific feature** - user entity can contain roles or other mechanism that can be used in guards to determine if user can navigate to a specific lazy feature (frontend / UX only, real security is the sole responsibility of backend which must determine which data can be provided as frontend can always be “hacked” using dev tools)
+- **Display user info**- user info such as name or avatar as a part of layout before loading of a specific lazy feature
+
+## App-specific core logic shared by more than one lazy feature
+
+Besides logic that needs to run from start, the core is also a place to implement anything that needs to be used by **more than one lazy feature**!
+
+## Other utils
+
+The core is also the place to implement other simple function-based utils. Typical examples could be functions to parse and transform format for things like dates, query params, or anything else…

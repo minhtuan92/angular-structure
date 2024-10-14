@@ -4,8 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 import { ProductService } from '../product.service';
-import { CardComponent } from '../../../shared/ui/card/card.component';
-import { DocumentManagerComponent } from '../../../shared/pattern/document-manager/document-manager.component';
+import { CardComponent } from '../../../ui/components/card/card.component';
+import { DocumentManagerComponent } from '../../../pattern/components/document-manager/document-manager.component';
 
 @Component({
   selector: 'my-app-1-product-list',

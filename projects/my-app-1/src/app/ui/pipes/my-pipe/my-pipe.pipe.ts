@@ -4,7 +4,7 @@ import { Pipe, type PipeTransform } from '@angular/core';
   name: 'myApp1MyPipe',
   standalone: true,
 })
-export class MyPipePipe implements PipeTransform {
+export class MyPipe implements PipeTransform {
   transform(value: unknown): unknown {
     return value;
   }
