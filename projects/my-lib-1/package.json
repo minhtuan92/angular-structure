@@ -6,7 +6,6 @@
     "@angular/core": "^18.1.0"
   },
   "dependencies": {
-    "my-lib-1": "file:",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

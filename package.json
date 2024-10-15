@@ -10,6 +10,8 @@
     "start:app1": "ng serve --project my-app-1",
     "build:app1": "ng build --project my-app-1",
     "lint:app1": "ng lint --project my-app-1",
+    "start:lib1": "ng serve --project my-lib-1",
+    "build:lib1": "ng build --project my-lib-1",
     "lint": "ng lint"
   },
   "private": true,

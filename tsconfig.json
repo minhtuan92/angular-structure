@@ -18,7 +18,8 @@
         "./dist/my-app-2"
       ],
       "my-lib-1": [
-        "./dist/my-lib-1"
+        "./dist/my-lib-1",
+        "./projects/my-lib-1/src/public-api.ts"
       ],
     },
     "esModuleInterop": true,
